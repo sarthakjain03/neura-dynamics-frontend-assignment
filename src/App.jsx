@@ -1,23 +1,19 @@
-import { useState } from "react";
+import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
+import ProductListingsPage from "./pages/ProductListingsPage.jsx";
+// import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1 className="text-xl text-yellow-500">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="bg-[#f5f9ff] min-h-screen">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navigate to={"/products"} />} exact />
+          <Route path="/products" element={<ProductListingsPage />} />
+          <Route path="/product/:id" element={<ProductListingsPage />} />
+          {/* <Route path="*" element={<NotFoundPage />} /> */}
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
