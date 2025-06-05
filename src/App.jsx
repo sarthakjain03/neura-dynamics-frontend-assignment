@@ -9,7 +9,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to={"/products"} />} exact />
           <Route path="/products" element={<ProductListingsPage />} />
-          <Route path="/product/:id" element={<ProductListingsPage />} />
+          {/* <Route path="/product/:id" element={<ProductListingsPage />} /> */}
           {/* <Route path="*" element={<NotFoundPage />} /> */}
         </Routes>
       </BrowserRouter>

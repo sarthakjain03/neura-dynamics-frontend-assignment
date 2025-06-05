@@ -3,6 +3,7 @@ import axios from "axios";
 
 const useProducts = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchProducts = async () => {
     try {
@@ -11,13 +12,14 @@ const useProducts = () => {
     } catch (error) {
       console.error(error);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
-  return { products };
+  return { products, loading };
 };
 
 export default useProducts;
