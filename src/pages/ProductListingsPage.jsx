@@ -1,14 +1,22 @@
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchAllProducts } from "../store/productSlice";
 import Header from "../layout/Header";
-import useProducts from "../hooks/useProducts";
 import ProductCard from "../components/ProductCard";
 import { Skeleton } from "@mui/material";
-import { useEffect } from "react";
 
 const ProductListingsPage = () => {
-  const { products, loading, fetchProducts } = useProducts();
+  const products = useSelector(state => state.products);
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
+
+  const handleFetchProducts = async () => {
+    setLoading(true);
+    await dispatch(fetchAllProducts()).finally(() => setLoading(false));
+  }
 
   useEffect(() => {
-    fetchProducts();
+    handleFetchProducts();
   }, []);
 
   return (
@@ -22,7 +30,7 @@ const ProductListingsPage = () => {
             ))}
           </>
         )}
-        {products.map((product) => (
+        {products?.map((product) => (
           <ProductCard
             key={product.id}
             id={product.id}

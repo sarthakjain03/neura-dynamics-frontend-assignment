@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const navigate = useNavigate();
+  const products = useSelector(state => state.products);
 
   const handleFavouritesClick = () => {
     navigate("/favourites");
@@ -18,7 +20,7 @@ const Header = () => {
         className="cursor-pointer bg-gradient-to-r from-blue-600 to-teal-600 rounded-md text-white py-2 px-4 shadow hover:from-blue-700 hover:to-teal-700"
         onClick={handleFavouritesClick}
       >
-        Favourites (3)
+        Favourites ({products?.filter((item) => item.isFavourite)?.length})
       </button>
     </header>
   );
