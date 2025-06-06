@@ -1,6 +1,8 @@
 import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 import ProductListingsPage from "./pages/ProductListingsPage.jsx";
-// import NotFoundPage from "./pages/NotFoundPage.jsx";
+import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
+import FavouriteProductsPage from "./pages/FavouriteProductsPage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 function App() {
   return (
@@ -9,8 +11,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to={"/products"} />} exact />
           <Route path="/products" element={<ProductListingsPage />} />
-          {/* <Route path="/product/:id" element={<ProductListingsPage />} /> */}
-          {/* <Route path="*" element={<NotFoundPage />} /> */}
+          <Route path="/favourites" element={<FavouriteProductsPage />} />
+          <Route path="/product/:id" element={<ProductDetailsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </div>
