@@ -34,7 +34,7 @@ const ProductCard = ({
           <p className="text-lg font-medium m-0">{title}</p>
           <p className="text-sm text-gray-500 truncate m-0">{description}</p>
         </div>
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-1 mb-3">
           <Rating value={rating?.rate} precision={0.1} readOnly />
           <p className="text-gray-500 m-0">({rating?.count})</p>
         </div>

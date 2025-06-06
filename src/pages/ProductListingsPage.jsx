@@ -1,23 +1,11 @@
-import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchAllProducts } from "../store/productSlice";
+import { useSelector } from "react-redux";
 import Header from "../layout/Header";
 import ProductCard from "../components/ProductCard";
 import { Skeleton } from "@mui/material";
 
 const ProductListingsPage = () => {
   const products = useSelector(state => state.products);
-  const dispatch = useDispatch();
-  const [loading, setLoading] = useState(false);
-
-  const handleFetchProducts = async () => {
-    setLoading(true);
-    await dispatch(fetchAllProducts()).finally(() => setLoading(false));
-  }
-
-  useEffect(() => {
-    handleFetchProducts();
-  }, []);
+  const loading = useSelector(state => state.initialLoading);
 
   return (
     <main className="flex flex-col w-full gap-14 pb-14">

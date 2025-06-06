@@ -36,7 +36,7 @@ const ProductDetailsPage = () => {
             <p className="text-sm text-gray-500">
               {product.description}
             </p>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
                 <Rating value={product.rating?.rate} precision={0.1} readOnly />
                 <p className="text-gray-500 m-0">
                   ({product.rating?.count})

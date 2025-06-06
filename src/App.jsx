@@ -3,8 +3,13 @@ import ProductListingsPage from "./pages/ProductListingsPage.jsx";
 import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 import FavouriteProductsPage from "./pages/FavouriteProductsPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+import { useDispatch } from "react-redux";
+import { fetchAllProducts } from "./store/productSlice.js";
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  dispatch(fetchAllProducts());
+
   return (
     <div className="bg-[#f5f9ff] min-h-screen">
       <BrowserRouter>
