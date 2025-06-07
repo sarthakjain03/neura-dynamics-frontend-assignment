@@ -90,81 +90,87 @@ const ProductListingsPage = () => {
     <main className="flex flex-col w-full gap-14 pb-14">
       <Header />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8 md:px-20 font-poppins">
-        {products?.length > 0 && (
-          <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-white w-full rounded-lg shadow px-5 py-3">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="flex items-center gap-3 text-xl font-medium">
-                <FaFilter size={18} />
-                Filters
-              </h2>
-              <button
-                onClick={handleResetFilters}
-                className="py-2 flex items-center gap-2 text-sm text-white px-10 rounded-md bg-blue-600 hover:bg-blue-700 cursor-pointer"
+        <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-white w-full rounded-lg shadow px-5 py-3">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="flex items-center gap-3 text-xl font-medium">
+              <FaFilter size={18} />
+              Filters
+            </h2>
+            <button
+              onClick={handleResetFilters}
+              className="py-2 flex items-center gap-2 text-sm text-white px-10 rounded-md bg-blue-600 hover:bg-blue-700 cursor-pointer"
+            >
+              <RiResetLeftLine size={16} />
+              Reset
+            </button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-4 md:gap-8">
+            <div className="col-span-1">
+              <TextField
+                id="search-title"
+                variant="outlined"
+                placeholder="Search Title..."
+                fullWidth
+                size="small"
+                value={filters?.searchTerm}
+                onChange={(e) =>
+                  setFilters({ ...filters, searchTerm: e.target.value })
+                }
+                slotProps={{
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <IoIosSearch size={20} />
+                      </InputAdornment>
+                    ),
+                  },
+                }}
+              />
+            </div>
+            <div className="col-span-1">
+              <Select
+                fullWidth
+                size="small"
+                value={filters?.category}
+                onChange={(e) =>
+                  setFilters({ ...filters, category: e.target.value })
+                }
               >
-                <RiResetLeftLine size={16} />
-                Reset
+                <MenuItem value="All">All Categories</MenuItem>
+                {categories?.map((category) => (
+                  <MenuItem key={category} value={category}>
+                    {category}
+                  </MenuItem>
+                ))}
+              </Select>
+            </div>
+            <div className="col-span-1">
+              <button
+                className="cursor-pointer flex gap-2 justify-center items-center w-full text-sm border rounded-md py-2"
+                onClick={handleSortClick}
+              >
+                {!sortOrder && <FaSort size={16} />}
+                {sortOrder === "asc" && <FaSortAmountDownAlt size={16} />}
+                {sortOrder === "desc" && <FaSortAmountUp size={16} />}
+                Sort by Price
               </button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-4 md:gap-8">
-              <div className="col-span-1">
-                <TextField
-                  id="search-title"
-                  variant="outlined"
-                  placeholder="Search Title..."
-                  fullWidth
-                  size="small"
-                  value={filters?.searchTerm}
-                  onChange={(e) =>
-                    setFilters({ ...filters, searchTerm: e.target.value })
-                  }
-                  slotProps={{
-                    input: {
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <IoIosSearch size={20} />
-                        </InputAdornment>
-                      ),
-                    },
-                  }}
-                />
-              </div>
-              <div className="col-span-1">
-                <Select
-                  fullWidth
-                  size="small"
-                  value={filters?.category}
-                  onChange={(e) =>
-                    setFilters({ ...filters, category: e.target.value })
-                  }
-                >
-                  <MenuItem value="All">All Categories</MenuItem>
-                  {categories?.map((category) => (
-                    <MenuItem key={category} value={category}>
-                      {category}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </div>
-              <div className="col-span-1">
-                <button
-                  className="cursor-pointer flex gap-2 justify-center items-center w-full text-sm border rounded-md py-2"
-                  onClick={handleSortClick}
-                >
-                  {!sortOrder && <FaSort size={16} />}
-                  {sortOrder === "asc" && <FaSortAmountDownAlt size={16} />}
-                  {sortOrder === "desc" && <FaSortAmountUp size={16} />}
-                  Sort by Price
-                </button>
-              </div>
-            </div>
           </div>
-        )}
+        </div>
         {loading && (
           <>
             {[1, 2, 3, 4, 5, 6].map((item) => (
               <Skeleton key={item} variant="rectangular" height={400} />
             ))}
           </>
+        )}
+        {!loading && filteredProducts?.length === 0 && (
+          <div className="col-span-3 items-center justify-center gap-10 text-center">
+            <h2 className="text-2xl font-medium">No Products Found</h2>
+            <p className="text-sm">
+              Try changing your filters or searching for a product
+            </p>
+          </div>
         )}
         {filteredProducts?.map((product) => (
           <ProductCard
