@@ -4,7 +4,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 import FavouriteProductsPage from "./pages/FavouriteProductsPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import { useDispatch } from "react-redux";
-import { fetchAllProducts } from "./store/productSlice.js";
+import { fetchAllProducts } from "./slices/productsSlice.js";
 
 const App = () => {
   const dispatch = useDispatch();

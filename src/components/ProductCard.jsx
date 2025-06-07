@@ -1,3 +1,4 @@
+import React from "react";
 import useProductActions from "../hooks/useProductActions";
 import { Rating } from "@mui/material";
 

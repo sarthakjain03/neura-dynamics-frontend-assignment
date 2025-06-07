@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addFavourite, removeFavourite } from "../store/productSlice";
+import { addFavourite, removeFavourite } from "../slices/productsSlice";
 
 const useProductActions = () => {
   const navigate = useNavigate();
