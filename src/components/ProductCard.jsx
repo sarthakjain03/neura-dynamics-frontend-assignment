@@ -1,4 +1,4 @@
-import useProducts from "../hooks/useProducts";
+import useProductActions from "../hooks/useProductActions";
 import { Rating } from "@mui/material";
 
 const ProductCard = ({
@@ -16,7 +16,7 @@ const ProductCard = ({
     handleAddToFavouritesClick,
     handleRemoveFavouriteClick,
     handleCardClick,
-  } = useProducts();
+  } = useProductActions();
 
   return (
     <div className="flex flex-col items-center justify-between gap-6 rounded-lg shadow-md hover:shadow-lg hover:scale-103 transition-all duration-300 bg-white px-6 pb-5 pt-8">
