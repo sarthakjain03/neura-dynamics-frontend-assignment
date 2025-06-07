@@ -1,4 +1,4 @@
-# 🛒 React Fake Store
+# 🛒 Neura Dynamics Frontend Assignment
 
 A responsive e-commerce web app built with **React**, **Redux Toolkit**, and the **Fake Store API**. This application allows users to browse products, search, filter, sort, and manage a list of favorite items.
 
