@@ -1,12 +1,52 @@
-# React + Vite
+# 🛒 React Fake Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive e-commerce web app built with **React**, **Redux Toolkit**, and the **Fake Store API**. This application allows users to browse products, search, filter, sort, and manage a list of favorite items.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔍 **Product Listing** with search, filter by category, and sort by price
+- 🧾 **Product Detail Page** with full info and add-to-favorites
+- ❤️ **Favorites Page** to view and remove saved products
+- ⚙️ **State Management** via Redux Toolkit
+- 🌐 **API Integration** with [Fake Store API](https://fakestoreapi.com/)
+- ⚡ **Debounced Search** input using React hooks
+- ✅ **Unit Tests** for slices and components (Jest)
+- 🔄 **Integration Tests** for user flow (search, filter, favorite)
+- 📱 **Responsive** design using **Tailwind CSS**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **React** (functional components, hooks)
+- **Redux Toolkit** (with async thunks and selectors)
+- **React Router** (for page navigation)
+- **Tailwind CSS** (utility-first styling)
+- **Jest** (unit testing)
+- **React Testing Library** (integration testing)
+
+---
+
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/sarthakjain03/neura-dynamics-frontend-assignment
+cd neura-dynamics-frontend-assignment
+npm install
+npm run dev
+```
+
+# Run tests
+```bash
+npm test
+```
+OR
+```bash
+npx jest
+```
+
