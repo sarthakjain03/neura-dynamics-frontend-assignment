@@ -89,8 +89,8 @@ const ProductListingsPage = () => {
   return (
     <main className="flex flex-col w-full gap-14 pb-14">
       <Header />
-      <div className="grid grid-cols-3 gap-8 px-20 font-poppins">
-        <div className="col-span-3 bg-white w-full rounded-lg shadow px-5 py-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8 md:px-20 font-poppins">
+        <div className="col-span-1 md:col-span-2 lg:col-span-3 bg-white w-full rounded-lg shadow px-5 py-3">
           <div className="flex justify-between items-center mb-4">
             <h2 className="flex items-center gap-3 text-xl font-medium">
               <FaFilter size={18} />
@@ -104,7 +104,7 @@ const ProductListingsPage = () => {
               Reset
             </button>
           </div>
-          <div className="grid grid-cols-3 items-center gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-4 md:gap-8">
             <div className="col-span-1">
               <TextField
                 id="search-title"

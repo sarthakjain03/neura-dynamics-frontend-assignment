@@ -38,7 +38,7 @@ const ProductCard = ({
           <Rating value={rating?.rate} precision={0.1} readOnly />
           <p className="text-gray-500 m-0">({rating?.count})</p>
         </div>
-        <div className="flex justify-between gap-3 items-center">
+        <div className="flex justify-between gap-3 flex-col lg:flex-row items-center">
           <p className="font-semibold text-2xl m-0">&#8377; {price}</p>
           {isFavourite ? (
             canRemoveFromFavourites ? (

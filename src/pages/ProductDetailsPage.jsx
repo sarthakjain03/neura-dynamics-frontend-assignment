@@ -21,9 +21,9 @@ const ProductDetailsPage = () => {
     <main className="flex flex-col w-full gap-14 pb-14">
       <Header />
       {product ? (
-        <div className="flex justify-center gap-16 font-poppins px-20">
+        <div className="flex justify-center items-center flex-col lg:flex-row gap-16 font-poppins px-8 md:px-20">
           <img src={product.image} alt={product.title} className="size-88" />
-          <div className="flex flex-col gap-5 max-w-1/2">
+          <div className="flex flex-col gap-5 max-w-full lg:max-w-1/2">
             <div className="flex flex-col gap-3">
               <h1 className="text-3xl font-semibold">{product.title}</h1>
               <div className="px-3 py-1 font-medium bg-gray-300 rounded-2xl w-fit text-xs">

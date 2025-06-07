@@ -8,8 +8,8 @@ const FavouriteProductsPage = () => {
   return (
     <main className="flex flex-col w-full gap-14 pb-14">
       <Header />
-      <div className="grid grid-cols-3 gap-8 px-20 font-poppins">
-        <h1 className="col-span-3 text-3xl">Favourite Products</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8 md:px-20 font-poppins">
+        <h1 className="col-span-1 md:col-span-2 lg:col-span-3 text-3xl">Favourite Products</h1>
         {products?.filter((item) => item.isFavourite)?.length === 0 && (
           <div className="flex justify-center col-span-3 mt-8">
             <p className="text-center text-gray-500 text-2xl">
