@@ -29,9 +29,6 @@ A responsive e-commerce web app built with **React**, **Redux Toolkit**, and the
 
 ---
 
-
----
-
 ## 📦 Installation
 
 ```bash
@@ -41,7 +38,9 @@ npm install
 npm run dev
 ```
 
-# Run tests
+---
+
+## 🧪 Testing
 ```bash
 npm test
 ```
