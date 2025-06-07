@@ -48,4 +48,8 @@ OR
 ```bash
 npx jest
 ```
+---
 
+## Test Results
+
+![Alt text](/public/test_results.png?raw=true "Test Results")
